@@ -1,4 +1,3 @@
-// src/components/Footer.jsx
 import {
   FaFacebookF,
   FaTwitter,
@@ -10,6 +9,8 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../asstes/images/logo.png";
 
 const Footer = () => {
   const [showTop, setShowTop] = useState(false);
@@ -27,9 +28,22 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-300 pt-10 relative">
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-        {/* Contact Info */}
+        {/* Logo + Contact Info */}
         <div>
-          <h2 className="text-2xl font-semibold text-green-500 mb-4">Nature Hotel</h2>
+          <Link to="/" className="flex items-center space-x-3 mb-4">
+            <div className="bg-white p-1 rounded-full shadow-md">
+              <img
+                src={logo}
+                alt="Nature Hotel Logo"
+                className="h-10 w-10 object-contain"
+              />
+            </div>
+            <div className="flex flex-col leading-tight">
+              <span className="text-lg font-bold text-green-400">Nature</span>
+              <span className="text-sm font-semibold text-green-400">Hotel</span>
+            </div>
+          </Link>
+
           <ul className="space-y-2 text-sm">
             <li className="flex items-start">
               <FaMapMarkerAlt className="mt-1 mr-2 text-orange-400" />
